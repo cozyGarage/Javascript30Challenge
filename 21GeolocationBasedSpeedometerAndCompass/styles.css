@@ -1,0 +1,81 @@
+html {
+    font-size: 10px;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background:
+      radial-gradient(rgb(89, 87, 87) 15%, transparent 16%) 0 0,
+      radial-gradient(rgb(107, 106, 106) 15%, transparent 16%) 8px 8px,
+      radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+      radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #787a36;
+    background-size: 16px 16px;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    padding: 2rem 5rem;
+    max-width: 350px;
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255,0.8);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  }
+
+  .compass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg.arrow {
+    width: 90px;
+    overflow: hidden;
+    transition: all 0.2s;
+    transform: rotate(0deg);
+    display: inline-block;
+    align-self: center;
+    margin-right: 1rem;
+  }
+
+
+
+  h1 {
+    color: rgb(23, 66, 132);
+    font-weight: 900;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .units {
+    font-size: 2rem;
+    color:black;
+  }
+  /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
+
+  .geolocation {
+    max-width: 300px;
+  }
+  .geolocation p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  span {
+    color: blue;
+  }
