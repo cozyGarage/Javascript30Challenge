@@ -20,3 +20,31 @@ body {
     height: 100%;
     background-color: var(--dark-gray);
 }
+
+
+/* Shared utility classes */
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 5px;
+}
+  
+@media (min-width: 768px) {
+    .grid {
+      width: 490px;
+      grid-template-columns: repeat(3, 150px);
+      grid-template-rows: 50px repeat(3, 150px) 60px;
+      gap: 20px;
+    }
+}
