@@ -1,0 +1,112 @@
+
+    html {
+      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .date-box {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .date {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+
+#alarm-input {
+  padding: 10px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: darkblue 2px solid;
+  margin-bottom: 10px;
+}
+
+#alarm-button {
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #018DED;
+  color: white;
+  cursor: pointer;
+}
+
+.alarm-message {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Shaking animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-5px) rotate(5deg); }
+    20% { transform: translateX(5px) rotate(-5deg); }
+    30% { transform: translateX(-5px) rotate(5deg); }
+    40% { transform: translateX(5px) rotate(-5deg); }
+    50% { transform: translateX(-5px) rotate(5deg); }
+    60% { transform: translateX(5px) rotate(-5deg); }
+    70% { transform: translateX(-5px) rotate(5deg); }
+    80% { transform: translateX(5px) rotate(-5deg); }
+    90% { transform: translateX(-5px) rotate(5deg); }
+    100% { transform: translateX(0); }
+  }
+
+  .shake-clock {
+    animation: shake 0.4s linear infinite;
+  }
