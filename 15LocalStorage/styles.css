@@ -1,0 +1,140 @@
+html,
+body {
+    box-sizing: border-box;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+:root {
+    --body-background: linear-gradient(
+        35deg,
+        #f2ae72 0%,
+        #588c7e 48%,
+        #abce96 100%
+    );
+    --form-background: rgba(255, 255, 255, 0.95);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.content {
+    background: var(--body-background);
+    background-size: cover;
+    min-height: 100vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg {
+    fill: white;
+    padding: 1.2rem;
+    width: 200px;
+    margin-bottom: 3rem;
+}
+
+.wrapper {
+    padding: 1.2rem;
+    max-width: 350px;
+    border-radius: 1rem;
+    background: var(--form-background);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+/* unordered list  */
+
+.plates {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+.plates li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.6rem 0;
+    font-weight: 100;
+
+    display: flex;
+}
+
+.plates label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.plates input {
+    display: none;
+}
+
+.plates input + label:before {
+    content: '⬜️';
+    margin-right: 0.7rem;
+}
+
+.plates input:checked + label:before {
+    content: '🍔';
+}
+
+/* form */
+
+.add-items {
+    margin: 1.2rem 0;
+}
+
+.add-items input {
+    padding: 0.7rem;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-items input[type='submit'] {
+    background-color: #f2ae72;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.add-items input[type='submit']:hover {
+    background-color: #e39b5c;
+}
+
+.add-items input[type='submit']:active {
+    background-color: #cd8b52;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.control-buttons input {
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.4rem;
+    background-color: #d96459;
+    font-weight: 600;
+    transition: background-color 0.1s ease-in-out;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.control-buttons input:hover {
+    background-color: #c95c52;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.control-buttons input:active {
+    background-color: #ab5048;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
