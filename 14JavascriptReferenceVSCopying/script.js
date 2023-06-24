@@ -2,10 +2,10 @@
 console.groupCollapsed(`${'Task-1: strings, numbers and booleans'}`);
 
 console.groupCollapsed(`${'Task-1.1: strings'}`);
-let name1 = 'Elena';
+let name1 = 'Trung';
 let name2 = name1;
 console.log('name1:', name1, 'name2:', name2);
-name1 = 'Lena';
+name1 = 'Thanh';
 console.log('name1 was changed');
 console.log('Updated name1:', name1, 'Not affected name2:', name2);
 console.groupEnd();
@@ -40,7 +40,7 @@ console.groupCollapsed(`${'Task-2: arrays'}`);
 
 console.groupCollapsed(`${'Task-2.0: updating the referenced arrays'}`);
 // Let's say we have an array
-const names = ['Elena', 'Roman', 'Dima'];
+const names = ['Trung', 'Shawn', 'Andre'];
 // and we want to make a copy of it.
 const family = names;
 console.log('arr1:', names);
@@ -115,8 +115,8 @@ console.groupCollapsed(`${'Task-3: objects'}`);
 
 console.groupCollapsed(`${'Task-3.0: updating the referenced objects'}`);
 const person = {
-    name: 'Elena Golovanova',
-    age: 35,
+    name: 'Trung Nguyen',
+    age: 0,
 };
 const student = person; // and think we make a copy:
 console.log('person:', person);
@@ -191,19 +191,19 @@ console.groupCollapsed(`${'Task-3.3: limitations of shallow object copy'}`);
 console.log('Shallow copy - newObj = Object.assign({}, originalObj):');
 
 const person3 = {
-    name: 'Elena Golovanova',
-    age: 35,
+    name: 'Shawn Wang',
+    age: 60,
     address: {
-        street: '123 Main St',
-        city: 'Anytown',
-        state: 'CA',
+        street: 'Big St',
+        city: 'Cool town',
+        state: 'Helsinki',
     },
 };
 
 const student3 = Object.assign({}, person3);
 console.log('person3:', person3);
 console.log('student3:', student3);
-student3.address.street = '456 Elm St'; // Modify the nested object in student2
+student3.address.street = 'Small St'; // Modify the nested object in student2
 console.log('student3 was changed');
 console.log('Updated student3:', student3);
 console.log('Affected person3:', person3);
