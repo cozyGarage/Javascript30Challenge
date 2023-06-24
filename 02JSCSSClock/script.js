@@ -73,9 +73,6 @@ function setAlarm() {
       playAlarm();
     }
   }
-
-  alarmButton.addEventListener('click', setAlarm);
-
 function cancelAlarm() {
   alarmTime = null;
   alarmButton.textContent = 'Set Alarm';
@@ -99,6 +96,13 @@ function playAlarm() {
 
     clock.classList.remove('shake-clock');
   }
+
+// Clear alarm when clicking "Cancel Alarm"
+document.getElementById('cancel-alarm-button').addEventListener('click', () => {
+    clearInterval(alarmInterval);
+    alarmMessage.textContent = 'Alarm canceled.';
+    stopAlarm();
+  });
 
 setDate(); // Initial call to avoid delay
 alarmButton.addEventListener('click', setAlarm);
