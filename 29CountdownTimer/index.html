@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project.29 Countdown Clock</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/e1ad46137b.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="timer">
+            <div class="timer__controls">
+                <button data-time="30" class="timer__button">30 Secs</button>
+                <button data-time="300" class="timer__button">Work 5</button>
+                <button data-time="1200" class="timer__button">Snack 20</button>
+                <button data-time="3600" class="timer__button">
+                    Lunch Break
+                </button>
+                <div class="custom-form-wrapper">
+                    <form name="customForm" id="custom">
+                        <input
+                            type="text"
+                            name="minutes"
+                            placeholder="Enter Minutes"
+                        />
+                    </form>
+                </div>
+            </div>
+            <!-- Buttons for controlling the alarm -->
+            <button id="alarmOnButton" class="alarm-button active">
+                <i class="fas fa-bell" style="font-size: 1.5rem"></i>
+            </button>
+            <button id="alarmOffButton" class="alarm-button">
+                <i class="fas fa-bell-slash" style="font-size: 1.5rem"></i>
+            </button>
+            <div class="display">
+                <h1 class="display__time-left">00:00</h1>
+                <p class="display__end-time">Be Back At <span>00:00</span></p>
+            </div>
+        </div>
+    </body>
+</html>

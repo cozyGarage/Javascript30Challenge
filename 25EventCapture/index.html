@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project-25 Event Capture, Propagation, Bubbling and Once</title>
+        <style>
+            html {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                text-align: center;
+                color: #2a3166;
+            }
+
+            p {
+                max-width: 500px;
+                text-align: center;
+                font-size: 1.2rem;
+                padding: 0.7rem;
+                margin: 0 auto;
+            }
+
+            .wrapper {
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            div {
+                /* width: 100%; */
+                /* padding: 50px; */
+                color: white;
+                text-shadow: 1px 1px 1px black;
+            }
+
+            .one {
+                width: 400px;
+                padding: 50px;
+                background: #f4abaa;
+            }
+
+            .two {
+                width: 300px;
+                background: #cae7df;
+                padding: 50px;
+            }
+
+            .three {
+                width: 200px;
+                background: #2a3166;
+                padding: 50px;
+            }
+
+            button {
+                margin: 1rem auto;
+                display: block;
+                padding: 0.3rem 1.2rem;
+                font-size: 1.1rem;
+                color: rgb(252, 252, 252);
+                background-color: #2a3166;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                border: none;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <h1>Project-25</h1>
+        <p>
+            This project explores event capture, propagation, bubbling, and the
+            "once" flag in JavaScript event handling. For more details, please
+            refer to the JavaScript code.
+        </p>
+        <div class="wrapper">
+            <div class="one">
+                1
+                <div class="two">
+                    2
+                    <div class="three">3</div>
+                </div>
+            </div>
+        </div>
+
+        <button>BUTTON</button>
+
+        <script>
+            const divs = Array.from(document.querySelectorAll('div')).slice(1);
+            const button = document.querySelector('button');
+            // console.log(divs);
+
+            function logText(e) {
+                console.log(this.classList.value);
+                // e.stopPropagation(); // stop bubbling
+            }
+
+            divs.forEach((div) =>
+                div.addEventListener('click', logText, {
+                    capture: false,
+                    // once:true
+                }),
+            );
+
+            //once:true === div.removeEventListener('click', logText)
+            document.body.addEventListener('click', logText);
+            button.addEventListener(
+                'click',
+                () => {
+                    console.log('Click!');
+                },
+                {
+                    once: true,
+                },
+            );
+        </script>
+    </body>
+</html>

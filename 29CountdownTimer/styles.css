@@ -1,0 +1,162 @@
+:root {
+    --color1: #f8f1f1;
+    --color2: rgb(232, 170, 66);
+    --color3: #e57c23;
+    --color4: #066477;
+    --color4-hover: #065666;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    height: 100vh;
+    background: var(--color1);
+    background: url('./assets/visax-qFUt28aPzOQ-unsplash.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    width: 370px;
+    height: 70vh;
+    background-color: var(--color2);
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.8);
+}
+
+.timer__controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--color1);
+    margin-bottom: 40px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.timer__controls > * {
+    padding: 0.8rem 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color1);
+    background-color: var(--color4);
+    cursor: pointer;
+    border: none;
+}
+
+.timer__controls > button:nth-child(1),
+.timer__controls > button:nth-child(2),
+.timer__controls > button:nth-child(3),
+.timer__controls > button:nth-child(4) {
+    flex: 1;
+}
+
+.timer__controls > button:nth-child(1),
+.timer__controls > button:nth-child(2),
+.timer__controls > button:nth-child(3) {
+    margin-right: 2px;
+}
+
+.timer__controls > button:nth-child(1) {
+    border-radius: 1rem 0 0 0;
+}
+
+.timer__controls > button:nth-child(4) {
+    border-radius: 0 1rem 0 0;
+}
+
+button.timer__button:hover {
+    background-color: var(--color4-hover);
+    color: #fff;
+}
+
+button.timer__button:active {
+    color: var(--color3);
+    box-shadow: 2px 2px 3px var(--color4);
+}
+
+.timer__controls :nth-child(6) {
+    background-color: var(--color1);
+}
+
+.custom-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 0;
+    border: none;
+}
+
+.custom-form-wrapper input[type='text'] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.custom-form-wrapper input[type='text']:focus {
+    /* Input focus styles */
+    border-color: var(--color3);
+    box-shadow: 0 0 5px var(--color3);
+}
+
+.alarm-button {
+    background-color: var(--color4);
+    color: var(--color1);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+margin-bottom: 10px;
+}
+
+.active {
+    color: var(--color3);
+    /* box-shadow: 2px 2px 3px var(--color4); */
+}
+
+.fa-bell {
+    padding: 0 0.28rem;
+}
+
+.display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display__time-left {
+    font-weight: 100;
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px var(--color4);
+    color: var(--color1);
+}
+
+.display__end-time {
+    font-size: 2rem;
+    color: var(--color4);
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.display__end-time > span {
+    text-shadow: 2px 2px var(--color4);
+    color: var(--color1);
+}

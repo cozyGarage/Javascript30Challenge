@@ -1,0 +1,147 @@
+:root {
+    --color1: #79E0EE;
+    --color1-1: rgba(101, 197, 210);
+    --color2: #98EECC;
+    --color3: #D0F5BE;
+    --color4: #FBFFDC;
+}
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background-color: var(--color4);
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+
+  }
+  
+.game-wrapper {
+    max-width: 380px;
+    background-color: var(--color3);
+    margin: 40px auto 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px black;
+    padding-bottom: 3px;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-self: center;
+    padding: 1rem;
+    background-color: var(--color1);
+}
+
+  h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 2;
+    margin: 0;
+  }
+  
+  .score {
+    background: var(--color1-1);
+    padding: 0.4rem 1.4rem;
+    line-height: 1;
+    border-radius: 1rem;
+    color: white;
+  }
+
+  .start-button{
+    align-self: center;
+    height: 36px;
+    padding: 0 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: black;
+    background-color: var(--color4);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .down-counter {
+    padding: 0.7rem;
+    text-align: center;
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(11, 11, 11);
+    background-color: var(--color3);
+    border-radius: 0.5rem;
+  }
+
+/* section rules */
+.rules {
+    background-color: var(--color4);
+    border: 2px solid black;
+    color:black;
+    text-shadow: 1px 1px rgb(255, 255, 255);
+}
+
+.description {
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+
+.game-result{
+    height: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(234, 15, 15);
+}
+
+/* main */
+
+  .game {
+    width: 380px;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0.6rem;
+  }
+  
+  .hole {
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hole:after {
+    display: block;
+    background: url('./assets/dirt.svg') bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 100%;
+    height:50px;
+    position: absolute;
+    z-index: 2;
+    bottom: -9px;
+  }
+  
+  .mole {
+    background: url('./assets/mole.svg') bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition:all 0.4s;
+  }
+  
+  .hole.up .mole {
+    top: 0;
+  }

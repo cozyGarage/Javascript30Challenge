@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #519d82 url('./assets/maxim-berg-xD9_dmlc0C4-unsplash.jpg'); */
+    background: #dacede url('./assets/maxim-berg-WG56pNhliUQ-unsplash.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+    position: relative;
+    font-size: 12px;
+}
+
+.wrapper {
+    width: 850px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+video {
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
+    align-self: center;
+}
+
+.speed {
+    width: 250px;
+    height: 30px;
+    background: #efefef;
+    /* flex: 1; */
+    display: flex;
+    align-items: flex-start;
+    /* margin: 30px; */
+    margin-top: 30px;
+    border-radius: 50px;
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    align-self: center;
+}
+
+.speed-bar {
+    width: 16%;
+    height: 30px;
+    /* background: linear-gradient(-170deg, #2376ae 0%, #c16ecf 100%); */
+    background-color: rgb(64, 200, 105);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    color: white;
+    /* height: 16.3%; */
+    font-weight: 600;
+}

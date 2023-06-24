@@ -1,0 +1,125 @@
+:root {
+    --color1: #ffe194;
+    --color2: #e8f6ef;
+    --color3: #1b9c85;
+    --color3-hover: #198874;
+    --color3-active: #146758;
+    --color4: rgba(76, 76, 109, 0.3);
+    --color5: rgba(76, 76, 109);
+    --color6: rgba(226, 226, 226, 0.6);
+}
+html {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color2);
+    background: radial-gradient(
+            circle at 25% 25%,
+            var(--color4) 5%,
+            transparent 7%
+        ),
+        radial-gradient(circle at 75% 25%, var(--color4) 5%, transparent 7%),
+        radial-gradient(circle at 25% 75%, var(--color2) 5%, transparent 7%),
+        radial-gradient(circle at 75% 75%, var(--color4) 5%, transparent 7%);
+    background-size: 100px 50px;
+}
+
+.speech-synthesizer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background: var(--color1);
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    width: calc(100% + 2rem);
+    margin: -1rem 0 1rem -1rem;
+    padding: 0.5rem;
+    background: var(--color5);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 100;
+    font-family: 'Pacifico', cursive;
+    color: var(--color2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.rate,
+.pitch,
+.volume {
+    display: flex;
+    margin-bottom: 0.6rem;
+}
+
+select {
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+}
+
+.rate input,
+.pitch input,
+.volume input {
+    flex: 1;
+}
+
+.btns-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+textarea {
+    height: 20rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.speech-synthesizer button {
+    background: var(--color3);
+    border: 0;
+    width: 49%;
+    float: left;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 0.7rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.speech-synthesizer button:hover {
+    background-color: var(--color3-hover);
+}
+
+.speech-synthesizer button:active {
+    background-color: var(--color3-active);
+    color: var(--color2);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
