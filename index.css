@@ -28,6 +28,11 @@ header{
     color: var(--base);
 }
 
+h1 {
+  text-align: center;
+  text-shadow: 2px 1px 2px #000;
+}
+
 body {
     display: flex;
     flex-direction: column;
