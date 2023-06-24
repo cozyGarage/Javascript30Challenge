@@ -7,7 +7,6 @@ const alarmButton = document.querySelector('#alarm-button');
 const alarmMessage = document.querySelector('.alarm-message');
 
 let alarmTime = null;
-let alarmInterval = null;
 
 function setDate() {
   const now = new Date();
@@ -39,40 +38,34 @@ function setDate() {
   requestAnimationFrame(setDate); // Optimize animation
 }
 
-
 function setAlarm() {
-    const currentTime = new Date();
-    const inputTime = alarmInput.value;
+  const inputTime = alarmInput.value;
+  if (!inputTime) return;
 
-    if (!inputTime.match(/^\d{2}:\d{2}$/)) {
-      alarmMessage.textContent = 'Invalid time format. Please use HH:MM.';
-      return;
-    }
+  const [hours, minutes] = inputTime.split(':');
+  const now = new Date();
+  const alarmDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    hours,
+    minutes
+  );
 
-    const [hours, minutes] = inputTime.split(':');
-    const alarmDate = new Date();
-    alarmDate.setHours(hours, minutes, 0, 0);
-
-    if (alarmDate < currentTime) {
-      alarmDate.setDate(alarmDate.getDate() + 1); // Set alarm for the next day
-    }
-
-    alarmTime = alarmDate.getTime();
-    alarmMessage.textContent = `Alarm set for ${hours}:${minutes}.`;
-
-    clearInterval(alarmInterval);
-    alarmInterval = setInterval(checkAlarm, 1000);
+  if (alarmDate < now) {
+    // If the alarm time is in the past, set it for tomorrow
+    alarmDate.setDate(alarmDate.getDate() + 1);
   }
 
-  function checkAlarm() {
-    const currentTime = new Date().getTime();
+  alarmTime = alarmDate;
+  alarmButton.textContent = 'Cancel Alarm';
+  alarmButton.removeEventListener('click', setAlarm);
+  alarmButton.addEventListener('click', cancelAlarm);
 
-    if (alarmTime && currentTime >= alarmTime) {
-      clearInterval(alarmInterval);
-      alarmMessage.textContent = 'Alarm triggered!';
-      playAlarm();
-    }
-  }
+  alarmMessage.textContent = `Alarm set for ${alarmDate.toLocaleTimeString()}`;
+  alarmInput.value = '';
+}
+
 function cancelAlarm() {
   alarmTime = null;
   alarmButton.textContent = 'Set Alarm';
@@ -83,26 +76,9 @@ function cancelAlarm() {
 }
 
 function playAlarm() {
-    const alarmSound = document.getElementById('alarm-sound');
-    alarmSound.play();
-
-    clock.classList.add('shake-clock');
-  }
-
-  function stopAlarm() {
-    const alarmSound = document.getElementById('alarm-sound');
-    alarmSound.pause();
-    alarmSound.currentTime = 0;
-
-    clock.classList.remove('shake-clock');
-  }
-
-// Clear alarm when clicking "Cancel Alarm"
-document.getElementById('cancel-alarm-button').addEventListener('click', () => {
-    clearInterval(alarmInterval);
-    alarmMessage.textContent = 'Alarm canceled.';
-    stopAlarm();
-  });
+  // Replace this with your desired alarm behavior
+  alert('ALARM!');
+}
 
 setDate(); // Initial call to avoid delay
 alarmButton.addEventListener('click', setAlarm);
