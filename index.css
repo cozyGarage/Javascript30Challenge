@@ -92,3 +92,43 @@ button:hover {
     height: 100%;
     object-fit: cover; /* Maintain the aspect ratio and cover the container */
   }
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.1rem;
+  font-size: 0.8rem;
+  color: black;
+  background-color: var(--light-gray);
+}
+
+footer a {
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+footer a:hover {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer i {
+  font-size: 30px;
+}
+
+footer a p {
+  padding: 0.3em;
+}
+
+footer p {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
