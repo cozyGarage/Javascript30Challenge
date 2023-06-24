@@ -1,14 +1,25 @@
+:root {
+  --font-letter: rgb(255, 255, 255);
+  --font-sound: rgb(243, 239, 28);
+  --font-playing: rgb(242, 184, 12);
+  --font-playing-background: rgba(62, 49, 23, 0.95);
+  --key-background: rgb(0, 0, 0, 0.6);
+}
+
 html {
-    font-size: 10px;
-    background: url('./background.jpg') bottom center;
-    background-size: cover;
-  }
-  
-  body,html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-image: radial-gradient(circle, #191970, #2f2f2f);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body,html {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-  }
+  
+}
   
   .keys {
     display: flex;
@@ -28,18 +39,21 @@ html {
     width: 10rem;
     text-align: center;
     color: white;
-    background: rgba(0,0,0,0.4);
+    background-color: var(--key-background);
+    box-shadow: 0 0 0.5rem var(--font-letter);
     text-shadow: 0 0 .5rem black;
   }
   
   .playing {
     transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
+    border-color: var(--font-playing);
+    background-color: var(--font-playing-background);
+    box-shadow: 0 0 1rem var(--font-playing);
   }
   
   kbd {
     display: block;
+    color: var(--font-letter);
     font-size: 4rem;
   }
   
@@ -47,6 +61,6 @@ html {
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    color: #ffc600;
+    color: var(--font-sound);
   }
   
