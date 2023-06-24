@@ -18,8 +18,17 @@
 html,
 body {
     height: 100%;
-    background-color: var(--dark-gray);
+    background-color: var(--light-gray);
 }
+
+body {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
 
 
 /* Shared utility classes */
@@ -43,8 +52,8 @@ button:hover {
 @media (min-width: 768px) {
     .grid {
       width: 490px;
-      grid-template-columns: repeat(3, 150px);
-      grid-template-rows: 50px repeat(3, 150px) 60px;
+      grid-template-columns: repeat(5, 150px);
+      grid-template-rows: repeat(6, 150px);
       gap: 20px;
     }
 }
