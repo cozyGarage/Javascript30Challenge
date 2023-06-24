@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project-19 Unreal Webcam Fun</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <div class="photobooth">
+            <!-- <div class="controls">
+                <div class="rgb">
+                    <div class="redMin colorInput">
+                        <label for="rmin">Red Min:</label>
+                        <input type="range" min="0" max="255" name="rmin" />
+                    </div>
+                    <div class="redMax colorInput">
+                        <label for="rmax">Red Max:</label>
+                        <input type="range" min="0" max="255" name="rmax" />
+                    </div>
+
+                    <br />
+
+                    <div class="greenMin colorInput">
+                        <label for="gmin">Green Min:</label>
+                        <input type="range" min="0" max="255" name="gmin" />
+                    </div>
+                    <div class="greenMax colorInput">
+                        <label for="gmax">Green Max:</label>
+                        <input type="range" min="0" max="255" name="gmax" />
+                    </div>
+
+                    <br />
+                    <div class="blueMin colorInput">
+                        <label for="bmin">Blue Min:</label>
+                        <input type="range" min="0" max="255" name="bmin" />
+                    </div>
+                    <div class="blueMax colorInput">
+                        <label for="bmax">Blue Max:</label>
+                        <input type="range" min="0" max="255" name="bmax" />
+                    </div>
+                </div>
+            </div> -->
+            <h1>
+                Experiment with different video filters and instantly see the
+                effects on your webcam video in real-time.
+            </h1>
+            <div class="filters">
+                <button class="filter-btn no-btn">NoEffect</button>
+                <button class="filter-btn red-btn">Red</button>
+                <button class="filter-btn rgbSplit-btn">RgbSplit</button>
+                <button class="filter-btn grayscale-btn">Grayscale</button>
+                <button class="filter-btn sepia-btn">Sepia</button>
+                <button class="filter-btn vintage-btn">Vintage</button>
+                <button class="filter-btn glitch-btn">Glitch</button>
+                <button class="filter-btn popArt-btn">Pop Art</button>
+            </div>
+
+            <div class="video-canva-wrapper">
+                <video class="player" title="Initial video"></video>
+                <canvas class="photo" title="Filtered video"></canvas>
+            </div>
+            <div class="takePhoto-wrapper">
+                <p>
+                    Capture a still image from your webcam video and save it as
+                    a JPEG file, which you can then download and use as you
+                    wish.
+                </p>
+                <button class="takePhoto">Take Photo</button>
+                <div class="strip"></div>
+            </div>
+        </div>
+
+        <audio class="snap" src="./assets/snap.mp3" hidden></audio>
+    </body>
+</html>
