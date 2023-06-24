@@ -4,18 +4,6 @@
   <meta charset="UTF-8">
   <title>JS + CSS Clock</title>
   <link rel="icon" href="https://fav.farm/✅" />
-</head>
-<body>
-
-
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
-    </div>
-
 
   <style>
     html {
@@ -29,10 +17,28 @@
     body {
       margin: 0;
       font-size: 2rem;
-      display: flex;
       flex: 1;
       min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .date-box {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .date {
+      font-size: 2rem;
+      font-weight: bold;
     }
 
     .clock {
@@ -68,33 +74,56 @@
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
-</style>
+  </style>
+</head>
+<body>
 
-<script>
-  const secondHand = document.querySelector('.second-hand');
-  const minsHand = document.querySelector('.min-hand');
-  const hourHand = document.querySelector('.hour-hand');
+  <div class="container">
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+    <div class="date-box">
+      <span class="date"></span>
+    </div>
+  </div>
 
-  function setDate() {
-    const now = new Date();
+  <script>
+    const secondHand = document.querySelector('.second-hand');
+    const minsHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+    const dateSpan = document.querySelector('.date');
 
-    const seconds = now.getSeconds();
-    const secondsDegrees = ((seconds / 60) * 360) + 90;
-    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    function setDate() {
+      const now = new Date();
 
-    const mins = now.getMinutes();
-    const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
-    minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+      const seconds = now.getSeconds();
+      const secondsDegrees = ((seconds / 60) * 360) + 90;
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-    const hour = now.getHours();
-    const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
-    hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-  }
+      const mins = now.getMinutes();
+      const minsDegrees = ((mins / 60) * 360) + ((seconds / 60) * 6) + 90;
+      minsHand.style.transform = `rotate(${minsDegrees}deg)`;
 
-  setInterval(setDate, 1000);
+      const hour = now.getHours();
+      const hourDegrees = ((hour / 12) * 360) + ((mins / 60) * 30) + 90;
+      hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-  setDate();
+      const dateOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      dateSpan.textContent = now.toLocaleDateString(undefined, dateOptions);
 
-</script>
+      requestAnimationFrame(setDate); // Optimize animation
+    }
+
+    setDate(); // Initial call to avoid delay
+  </script>
 </body>
 </html>
